@@ -1,0 +1,150 @@
+---
+title: "Capstone Blog Viz"
+author: "Clarissa Boyajian"
+date: "11/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(lubridate)
+```
+
+```{r Create dataframe}
+cap_timeline <- data.frame(
+  task = c("Capstone Kickoff\nWorkshop", 
+           "Writing A Proposal\nWorkshop", 
+           "Start Proposals", 
+           "Proposals Due", 
+           "Capstone Projects Reveal", 
+           "Student Voting Begins", 
+           "Final Capstone Assignments",
+           "Draft Design & Implementation \nPlan",
+           "Design Plan Presentations",
+           "Final Design & Implementation \nPlan",
+           "Draft Technical\nDocumentation & Repo",
+           "Final Presentations"),
+  event_type = c(rep(c("Proposal (optional)"), times = 7), rep(c("Capstone Project"), times = 5)),
+  year = c(rep(c(2020), times = 7), rep(c(2021), times = 5)),
+  month = c(rep(c(8), times = 2), 9, 10, rep(c(11), times = 2), 12, 2, rep(c(3), times = 2), 4, 5),
+  day = c(9, 26,01, 15, 17, 18, 1, 11, 3, 11, 29, 26)
+)
+
+cap_timeline$date <- with(cap_timeline, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      cap_timeline$year, 
+                                      cap_timeline$month, 
+                                      cap_timeline$day)))
+
+cap_timeline <- cap_timeline[with(cap_timeline, order(date)), ]
+```
+
+```{r Data Wrangling}
+event_type_levels <- c("Proposal (optional)", "Capstone Project")
+
+event_type_color <- (c("goldenrod", "darkred"))
+
+cap_timeline$event_type <- factor(cap_timeline$event_type, 
+                                  levels = event_type_levels, 
+                                  ordered = TRUE)
+```
+
+```{r Setting Timeline Range}
+month_buffer <- 2
+
+month_date_range <- seq(min(cap_timeline$date) - months(month_buffer), 
+                        max(cap_timeline$date) + months(month_buffer), 
+                        by = "month")
+
+month_format <- format(month_date_range, "%b")
+
+month_df <- data.frame(month_date_range, month_format)
+
+year_date_range <- seq(min(cap_timeline$date) - months(month_buffer), 
+                               max(cap_timeline$date) + months(month_buffer), 
+                               by = "year")
+
+year_format <- format(year_date_range, "%Y")
+
+year_df <- data.frame(year_date_range, year_format)
+```
+
+```{r Set Positions for Points}
+positions <- c(-0.5, -1.0, 0.25, 0.4, -0.25, 0.75, 1.0,
+               0.5, -1.0, -0.5, 0.25, -1.25)
+
+directions <- c(-1, -1, 1, 1, -1, 1, 1,
+                1, -1, -1, 1, -1)
+
+line_pos <- data.frame(
+  "date" = unique(cap_timeline$date),
+  "position" = rep(positions, length.out = length(unique(cap_timeline$date))),
+  "direction" = rep(directions, length.out = length(unique(cap_timeline$date)))
+)
+
+cap_timeline <- left_join(x = cap_timeline, y = line_pos, by = "date")
+```
+
+```{r Setting Positions for Point Labels}
+text_offset <- 0.15
+
+absolute_value <- (abs(cap_timeline$position))
+
+text_position <- absolute_value + text_offset
+
+cap_timeline$text_position <- text_position * cap_timeline$direction
+```
+
+```{r Plotting}
+timeline_plot <- ggplot(data = cap_timeline, 
+                        aes(x = date, y = position, col = event_type, label = task)) +
+  labs(col = "Tasks") +
+  scale_color_manual(values = event_type_color, 
+                     labels = event_type_levels, 
+                     drop = FALSE) +
+  theme_classic() +
+  geom_hline(yintercept = 0, 
+             color = "black", 
+             size = 0.3) +
+  geom_segment(aes(y = position,
+                   yend = 0,
+                   xend = date), 
+               color = "black", 
+               size = 0.2) +
+  geom_point(aes(y = position), 
+             size = 3) +
+  theme(axis.line.y = element_blank(),
+        axis.text.y=element_blank(),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        axis.text.x =element_blank(),
+        axis.ticks.x =element_blank(),
+        axis.line.x =element_blank(),
+        legend.position = "bottom") +
+  geom_text(data = month_df, 
+            aes(x = month_date_range,
+                y = -0.15,
+                label = month_format), 
+            size = 3.5, 
+            vjust = 0.5, 
+            color = "black", 
+            angle = 90) +
+  geom_text(data = year_df,
+            aes(x = year_date_range,
+                y = -0.5,
+                label = year_format,
+                fontface = "bold"), 
+            size = 3.5, 
+            color = "black") +
+  geom_text(aes(y = text_position, 
+                label = task), 
+            size = 3.5, 
+            vjust = 0.6)
+
+timeline_plot
+```
+
+

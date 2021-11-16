@@ -1,0 +1,48 @@
+---
+title: "MEDS Capstone Blog"
+author: "Clarissa Boyajian"
+date: "11/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+```
+
+Hello! We are Halina and Clarissa, two current students at University of CA, Santa Barbara in the Bren School’s Masters of Environmental Data Science (MEDS) inaugural cohort.
+
+## About us
+
+[Halina intro]
+
+[Clarissa intro]
+
+
+## Capstone projects
+
+The MEDS thesis equivalent is a real-world, client-focus capstone project using data to solve an environmental problem. This year, all clients for capstone projects are UCSB affiliated, but in future years anyone will be able to propose a project! Projects that are chosen by the Capstone Committee get a team of 3-4 students from January to June 2022 (roughly 1 full-time staff for 6-months). All projects need to be product-oriented, have access to necessary data, be fully funded, have an environmental justice aspect, and have a clearly defined scope with a collaborative, flexible spirit. 
+
+
+[timeline viz - see one option in data viz folder]
+
+
+## Our proposal
+The proposal that we worked on is called *Ensuring equitable access to outdoor recreation: Evaluating spatiotemporal patterns and trends in campground use on federal public lands.* If chosen, it will combine Recreation.gov data and U.S. Census Data to create a tool that visually represents our analysis of access to federal lands. There is a growing need to understand and mitigate inequities in access to outdoor recreation, especially on public lands. Specifically, our project will address this need by creating an interactive platform for summarizing and visualizing park-specific patterns and trends in visitation volume, demand, and visitors’ location of origin.
+
+Major shout out to Kaitlyn Gaynor and Will Rice for all their support and guidance on our proposal!
+
+## Tips, thoughts, and recommondations 
+
+
+
+
+
+
+
+
+
+
+
+
