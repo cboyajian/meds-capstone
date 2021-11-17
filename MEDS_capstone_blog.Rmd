@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
-Hello! We are Halina and Clarissa, two current students at University of CA, Santa Barbara in the Bren School’s Masters of Environmental Data Science (MEDS) inaugural cohort.
+Hello! We are Halina and Clarissa, two current students at the University of California, Santa Barbara in the Bren School’s Masters of Environmental Data Science (MEDS) inaugural cohort.
 
 ## About us
 
