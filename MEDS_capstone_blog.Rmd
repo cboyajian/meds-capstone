@@ -11,11 +11,13 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
-Hello! We are Halina and Clarissa, two current students at the University of California, Santa Barbara in the Bren School's Masters of Environmental Data Science (MEDS) inaugural cohort.
+Hello! We are [Halina](https://hdolinh.github.io/) and [Clarissa](https://cboyajian.github.io/), two current students at the University of California, Santa Barbara in the Bren School's [Masters of Environmental Data Science (MEDS) inaugural cohort](https://bren.ucsb.edu/masters-programs/master-environmental-data-science).
 
 ## About us
 
-Halina has a BA in Environmental Studies & Biology
+Halina has a BA in Environmental Studies & Biology from UC Santa Cruz and has experience in field research, outdoor education, environmental advocacy, and waste. While working in Los Angeles, she recognized data inaccuracies in representation and in metrics. Halina is excited to apply her data science training to address these gaps and to find equitable solutions for environmental issues affecting urban watersheds. 
+
+plans to apply her training in data science to find equitable solutions for environmental problems in urban watersheds. 
 
 [Clarissa intro]
 
@@ -105,25 +107,29 @@ Major shout out to Kaitlyn Gaynor and Will Rice for all their support and guidan
 
 -   Who is receiving the brunt of the suffering or harm in the situation?
 
-3. **Exclusionary Solutions**
-  - Does what is offered make sense for all potential parties involved? 
-  - Is the solution reasonable and accessible?
+3.  **Exclusionary Solutions**
 
-4. **Racism & Xenophobia**
-  - How is this factoring into the situation? 
-  - Does someone have less power or privilege because of their race or ethnicity?
+-   Does what is offered make sense for all potential parties involved?
+-   Is the solution reasonable and accessible?
 
-5. **Burden of Evidence**
-  - Who is responsible for showing there is environmental harm? 
-  - Is this appropriate? What would an alternative be?
+4.  **Racism & Xenophobia**
 
-6. **Ways of Knowing**
-  - Whose "way of knowing" are privileged? 
-  - Is there a type of evidence or data that is privileged over others? 
-  - Is the world view of the dominant group causing harm? 
+-   How is this factoring into the situation?
+-   Does someone have less power or privilege because of their race or ethnicity?
 
-7. **Anthropocentrism / Species-ism**
-  - What aspects of the environment are being systematically overlooked and why?
-  - How is excessive self-centeredness playing into this - on the part of the huamns?
-  - What can we do to overcome it?
-  
+5.  **Burden of Evidence**
+
+-   Who is responsible for showing there is environmental harm?
+-   Is this appropriate? What would an alternative be?
+
+6.  **Ways of Knowing**
+
+-   Whose "way of knowing" are privileged?
+-   Is there a type of evidence or data that is privileged over others?
+-   Is the world view of the dominant group causing harm?
+
+7.  **Anthropocentrism / Species-ism**
+
+-   What aspects of the environment are being systematically overlooked and why?
+-   How is excessive self-centeredness playing into this - on the part of the huamns?
+-   What can we do to overcome it?
