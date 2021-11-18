@@ -11,21 +11,33 @@ knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
-Hello! We are [Halina](https://hdolinh.github.io/) and [Clarissa](https://cboyajian.github.io/), two current students at the University of California, Santa Barbara in the Bren School's [Masters of Environmental Data Science (MEDS) inaugural cohort](https://bren.ucsb.edu/masters-programs/master-environmental-data-science).
+Hello! We are [Halina](https://hdolinh.github.io/) and [Clarissa](https://cboyajian.github.io/), two current students at the University of California, Santa Barbara in the Bren School's [Masters of Environmental Data Science (MEDS)](https://bren.ucsb.edu/masters-programs/master-environmental-data-science) inaugural cohort.
 
 ## About us
 
-Halina has a BA in Environmental Studies & Biology from UC Santa Cruz and has experience in field research, outdoor education, environmental advocacy, and waste. While working in Los Angeles, she recognized data inaccuracies in representation and in metrics. Halina is excited to apply her data science training to address these gaps and to find equitable solutions for environmental issues affecting urban watersheds. 
-
-plans to apply her training in data science to find equitable solutions for environmental problems in urban watersheds. 
+Halina has a BA in Environmental Studies & Biology from UC Santa Cruz and has experience in field research, outdoor education, environmental advocacy, and waste. While working in Los Angeles, she recognized data inaccuracies in representation and in metrics. Halina is excited to apply her data science training to address these gaps and to find equitable solutions for environmental issues affecting urban watersheds.
 
 [Clarissa intro]
 
-## Capstone projects
+## MEDS Capstone Project 101
 
-The MEDS thesis equivalent is a real-world, client-focus capstone project using data to solve an environmental problem. This year, all clients for capstone projects are UCSB affiliated, but in future years anyone will be able to propose a project! Projects that are chosen by the Capstone Committee get a team of 3-4 students from January to June 2022 (roughly 1 full-time staff for 6-months). All projects need to be product-oriented, have access to necessary data, be fully funded, have an environmental justice aspect, and have a clearly defined scope with a collaborative, flexible spirit.
+The [MEDS capstone project](https://bren.ucsb.edu/masters-programs/master-environmental-data-science/meds-capstone-projects) is a collaborative team experience where students use data to design, develop, and share a deliverable to help a client address an environmental issue. For the 2021-2022 academic year, all clients for capstone projects are UCSB affiliated, but in future years anyone will be able to propose a project! Projects that are chosen by the Capstone Committee get a team of 3-4 students from January to June 2022 (roughly 1 full-time staff for 6-months).
+
+**All projects need to be:**
+
+-   product-oriented
+
+-   have access to necessary data
+
+-   be fully funded
+
+-   have an environmental justice aspect
+
+-   have a clearly defined scope
 
 [timeline viz - see one option in data viz folder]
+
+thesis equivalent is a real-world,
 
 ## Our proposal
 
