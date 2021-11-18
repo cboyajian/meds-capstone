@@ -21,25 +21,29 @@ Halina has a BA in Environmental Studies & Biology from UC Santa Cruz and has ex
 
 ## MEDS Capstone Project 101
 
-The [MEDS capstone project](https://bren.ucsb.edu/masters-programs/master-environmental-data-science/meds-capstone-projects) is a collaborative team experience where students use data to design, develop, and share a deliverable to help a client address an environmental issue. For the 2021-2022 academic year, all clients for capstone projects are UCSB affiliated, but in future years anyone will be able to propose a project! Projects that are chosen by the Capstone Committee get a team of 3-4 students from January to June 2022 (roughly 1 full-time staff for 6-months). All projects need to be product-oriented, have access to necessary data, be fully funded, have an environmental justice aspect, and have a clearly defined scope.
+The [MEDS capstone project](https://bren.ucsb.edu/masters-programs/master-environmental-data-science/meds-capstone-projects) is a collaborative team experience where students use data to design, develop, and share a deliverable to help a client address an environmental issue. For the 2021-2022 academic year, all clients for capstone projects are UCSB affiliated, but in future years anyone will be able to propose a project! Projects that are chosen by the Capstone Committee get a team of 3-4 students from January to June 2022 (roughly 1 full-time staff for 6-months). All projects need to be product-oriented, have access to necessary data, be fully funded, have an environmental justice aspect, and have a clearly defined scope. Check out more in the timeline below!
 
 [timeline viz - see one option in data viz folder]
 
 ## Our proposal
 
-We are co-authors on the proposal, *Ensuring equitable access to outdoor recreation: Evaluating spatiotemporal patterns and trends in campground use on federal public lands.* If chosen, it will combine data from the [Recreation Information Database (RIDB)](https://ridb.recreation.gov/landing) and [U.S. Census Data](https://data.census.gov/cedsci/) to create a tool that visually represents our analysis of access to federal lands. There is a growing need to understand and mitigate inequities in access to outdoor recreation, especially since outdoor recreation provides critical health and well-being benefits to communities. Our primary deliverable is to create an interactive platform using the [R Package, Shiny](https://shiny.rstudio.com/). The app will summarize and visualize park-specific patterns and trends in visitation volume, demand, and visitors' location of origin.
+We are co-authors on the proposal, *Ensuring equitable access to outdoor recreation: Evaluating spatiotemporal patterns and trends in campground use on federal public lands.* If chosen, it will combine data from the [Recreation Information Database (RIDB)](https://ridb.recreation.gov/landing) and [U.S. Census Data](https://data.census.gov/cedsci/) to create a tool that visually represents our analysis of access to federal lands. There is a growing need to understand and mitigate inequities in access to outdoor recreation, especially since outdoor recreation provides critical health and well-being benefits to communities. *We understand this sentiment as the two of us have experience working directly with communities and the outdoors. We care deeply about studying how people interacat with the environment.* Our primary deliverable is to create an interactive platform using the [R Package, Shiny](https://shiny.rstudio.com/). The app will summarize and visualize park-specific patterns and trends in visitation volume, demand, and visitors' location of origin.
 
 Major shout out to [Kaitlyn Gaynor](http://www.kaitlyngaynor.com/wil) and [Will Rice](https://www.willrice.us/) for all their support and guidance on our proposal!
 
 ## Tips, thoughts, and recommondations
 
+Now that our proposal has been submitted, we're waiting to see if it will be selected. While we wait, we've taken some time to reflect on the proposal process. There's a lot we've learned and we've compiled our top thoughts below.
+
 #### 5 Reasons to write a proposal (even if you think you shouldn't or can't)
 
-1.  
+We won't deny that writing a proposal can be a daunting task -- it takes time and work! -- but we are grateful to have gone through the process. Even if you're reading this and the proposal deadline is two weeks away, we encourage you to still consider writing a prosopal! See if these reasons can convince you: 
 
-2.  
+1.  Network
 
-3.  
+2.  Build up resume
+
+3.  Learn more about a topic you're interested in depth
 
 4.  
 
