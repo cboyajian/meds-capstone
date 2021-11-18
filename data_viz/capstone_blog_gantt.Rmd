@@ -1,0 +1,104 @@
+---
+title: "Data viz (gant chart)"
+author: "Clarissa Boyajian"
+date: "11/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+
+```{r Create df}
+cap_timeline <- data.frame(
+  task = c("Capstone Kickoff\nWorkshop", 
+           "Writing A Proposal\nWorkshop", 
+           "Write Proposals", 
+           "Projects Revealed\nto MEDS", 
+           "Student Voting", 
+           "Final Capstone\nAssignments",
+           "Design &\nImplementation Plan",
+           "Design Plan\nPresentations",
+           "Technical Documentation\n& Repo",
+           "Final Presentations"),
+  event_type = c("Proposal (required)", 
+                 "Proposal (optional)",
+                 "Proposal (optional)",
+                 "Announcements", 
+                 "Proposal (required)", 
+                 "Announcements", 
+                 "Capstone Project",
+                 "Capstone Project",
+                 "Capstone Project",
+                 "Capstone Project"),
+  start_y = c(rep(c(2021), times = 6), 
+              rep(c(2022), times = 4)),
+  start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05),
+  start_d = c(09, 26, 26, 17, 16, 01, 02, 03, 11, 26),
+  end_y = c(rep(c(2021), times = 6), 
+            rep(c(2022), times = 4)),
+  end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05),
+  end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27)
+  )
+
+cap_timeline$start_date <- with(cap_timeline, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      cap_timeline$start_y, 
+                                      cap_timeline$start_m, 
+                                      cap_timeline$start_d)))
+
+cap_timeline$end_date <- with(cap_timeline, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      cap_timeline$end_y, 
+                                      cap_timeline$end_m, 
+                                      cap_timeline$end_d)))
+
+cap_timeline$order <- 1:nrow(cap_timeline)
+
+cap_timeline <- cap_timeline[with(cap_timeline, order(start_date)), ]
+```
+
+
+
+```{r Create gantt, fig.width=10}
+time_line <- cap_timeline %>% 
+ ggplot(aes(x = start_date, 
+            y = order, 
+            color = event_type)) +
+ geom_segment(aes(xend = end_date, 
+                  yend = order, 
+                  color =  event_type), 
+              size = 10) +
+ geom_text(aes(label = task), 
+           size = 4, 
+           show.legend = FALSE, 
+           nudge_x = -45
+           ) +
+ scale_color_manual(values = c("Proposal (optional)" = "#004266", 
+                               "Announcements" = "#FCB322", 
+                               "Proposal (required)" = "#D62828",
+                               "Capstone Project" = "darkred")) + 
+  expand_limits(x = as.Date(c("2021-04-01", "2022-06-30"))) +
+  theme(legend.position = "right",
+        legend.title = element_blank(),
+        legend.direction = "vertical",
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(),
+        text = element_text(size = 15))+
+  scale_x_continuous(breaks = as.Date(c("2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01", 
+                                        "2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01")),
+                     labels = c("Aug 2021", "Sept", "Oct", "Nov", "Dec", "Jan 2022", "Feb", "March", "April", "May"),
+                     n.breaks = 10) +
+  labs(title = "MEDS Capstone Timeline")
+
+time_line
+```
+
