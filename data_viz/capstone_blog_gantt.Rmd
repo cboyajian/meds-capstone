@@ -153,3 +153,96 @@ test_plot2
 plot(test_plot2_rebuilt)
 ```
 
+Halina attempt
+```{r}
+cap_timeline_hd <- data.frame(
+  task = c("Capstone Kickoff Workshop", 
+           "Writing A Proposal Workshop", 
+           "Write Proposals", 
+           "Projects Revealed to MEDS", 
+           "Student Voting", 
+           "Final Capstone Assignments",
+           "Design & Implementation Plan",
+           "Design Plan Presentations",
+           "Technical Documentation & Repo",
+           "Final Presentations"),
+  start_y = c(rep(c(2021), times = 6), 
+              rep(c(2022), times = 4)),
+  start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05),
+  start_d = c(09, 26, 27, 17, 19, 01, 02, 03, 04, 26),
+  end_y = c(rep(c(2021), times = 6), 
+            rep(c(2022), times = 4)),
+  end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05),
+  end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27)
+  )
+
+cap_timeline_hd$start_date <- with(cap_timeline_hd, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      cap_timeline_hd$start_y, 
+                                      cap_timeline_hd$start_m, 
+                                      cap_timeline_hd$start_d)))
+
+cap_timeline_hd$end_date <- with(cap_timeline_hd, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      cap_timeline_hd$end_y, 
+                                      cap_timeline_hd$end_m, 
+                                      cap_timeline_hd$end_d)))
+
+cap_timeline_hd$order <- 1:nrow(cap_timeline_hd)
+
+cap_timeline_hd <- cap_timeline_hd[with(cap_timeline_hd, order(start_date)), ]
+```
+
+```{r}
+specific_timeline_hd <- cap_timeline_hd %>% 
+  select("task", "start_date", "end_date") %>% 
+  mutate(event_type_color = c("#D62828", "#004266", "#004266", "#D62828", "#FCB322", "#FCB322", "darkred", "darkred", "darkred", "darkred"))
+```
+
+```{r}
+phase_timeline_hd <- data.frame(
+  phase = c("Proposal", 
+           "Selection",
+           "Capstone Project"),
+  start_y = c(rep(c(2021), times = 2), 
+              rep(c(2022), times = 1)),
+  start_m = c(08, 11, 01),
+  start_d = c(01, 01, 01),
+  end_y = c(rep(c(2021), times = 2), 
+            rep(c(2022), times = 1)),
+  end_m = c(10, 12, 06),
+  end_d = c(31, 31, 30)
+  )
+
+phase_timeline_hd$start_date <- with(phase_timeline_hd, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      phase_timeline_hd$start_y, 
+                                      phase_timeline_hd$start_m, 
+                                      phase_timeline_hd$start_d)))
+
+phase_timeline_hd$end_date <- with(phase_timeline_hd, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      phase_timeline_hd$end_y, 
+                                      phase_timeline_hd$end_m, 
+                                      phase_timeline_hd$end_d)))
+
+phase_timeline_hd$order <- 1:nrow(phase_timeline_hd)
+
+phase_timeline_hd <- phase_timeline_hd[with(phase_timeline_hd, order(start_date)), ]
+```
+
+```{r}
+phase_timeline_hd_2 <- phase_timeline_hd %>% 
+  select("phase", "start_date", "end_date") %>% 
+  mutate(event_type_color = c("#D62828", "#004266", "darkred"))
+```
+
+```{r}
+gg_vistime(data = phase_timeline_hd_2,
+           col.event = "phase",
+           col.start = "start_date",
+           col.end = "end_date",
+           col.color = "event_type_color",
+           optimize_y = TRUE)
+```
+
