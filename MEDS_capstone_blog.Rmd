@@ -17,7 +17,7 @@ Hello! We are [Halina](https://hdolinh.github.io/) and [Clarissa](https://cboyaj
 
 Halina has a BA in Environmental Studies & Biology from UC Santa Cruz and has experience in field research, outdoor education, environmental advocacy, and waste. While working in Los Angeles, she recognized data inaccuracies in representation and in metrics. Halina is excited to apply her data science training to address these gaps and to find equitable solutions for environmental issues affecting urban watersheds.
 
-[Clarissa intro]
+Clarissa holds a BA in Urban and Environmental Policy from Occidental College in Los Angeles, CA. She has experience with urban forestry volunteer management and education, grant writing, and nonprofit management. In her 5+ years in the Los Angeles urban forestry sphere, she experienced a lack of data collection and analysis to guide program and policy decisions. She is excited bring her data science training collaborative work the creates equitable connections between people and the developed and wild environments.
 
 ## MEDS Capstone Project 101
 
