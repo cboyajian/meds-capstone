@@ -94,11 +94,11 @@ cap_timeline <- data.frame(
            "Design Plan Presentations",
            "Technical Documentation & Repo",
            "Final Presentations"),
-  event_type = c("Selection (required)",
+  event_type = c("Proposal Selection",
                  "Proposal (optional)",
                  "Proposal (optional)",
                  "Announcements",
-                 "Selection (required)",
+                 "Proposal Selection",
                  "Announcements", 
                  "Capstone Project",
                  "Capstone Project",
@@ -114,19 +114,12 @@ cap_timeline <- data.frame(
   end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27)
   )
 
-# add color for event type
-cap_timeline <- cap_timeline %>% 
-  mutate(event_type_color = case_when(event_type == "Proposal (optional)" ~ dark_green,
-                                      event_type == "Announcements" ~ dark_yellow,
-                                      event_type == "Selection (required)" ~ dark_blue,
-                                      event_type == "Capstone Project" ~ dark_red))
-
-# re-level event type factor
-event_type_levels <- c("Announcements", "Proposal (optional)", "Selection (required)", "Capstone Project")
+# re-level event type factor and add color
+event_type_levels <- c("Announcements", "Proposal (optional)", "Proposal Selection", "Capstone Project")
 cap_timeline$event_type <- factor(cap_timeline$event_type, 
                                   levels = event_type_levels, 
                                   ordered = TRUE)
-event_type_color <- (c("goldenrod", "darkred"))
+event_type_color <- (c(dark_yellow, dark_green, dark_blue, dark_red))
 
 # create start date column
 cap_timeline$start_date <- with(cap_timeline, 
