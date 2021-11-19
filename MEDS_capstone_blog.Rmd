@@ -33,25 +33,21 @@ Major shout out to [Kaitlyn Gaynor](http://www.kaitlyngaynor.com/wil) and [Will 
 
 ## Tips, thoughts, and recommondations
 
-Now that our proposal has been submitted, we're waiting to see if it will be selected. While we wait, we've taken some time to reflect on the proposal process. There's a lot we've learned and we've compiled our top thoughts below.
+Now that our proposal has been submitted, we're waiting to see if it will be selected. While we wait, we've taken some time to reflect on the proposal process. There's a lot we've learned and we've compiled our most essential thoughts below.
 
-#### 5 Reasons to write a proposal (even if you think you shouldn't or can't)
+#### Why you should write a proposal (even if you think you shouldn't or can't)
 
-We won't deny that writing a proposal can be a daunting task -- it takes time and work! -- but we are grateful to have gone through the process. Even if you're reading this and the proposal deadline is two weeks away, we encourage you to still consider writing a prosopal! See if these reasons can convince you: 
+We won't deny that writing a proposal can be a daunting task -- it takes time and work! -- but we are grateful to have gone through the process. Even if you're reading this and the proposal deadline is two weeks away, we encourage you to still consider writing a proposal! See if these reasons can convince you:
 
-1.  Network
+-   You will hear this plenty at Bren (if you haven't already), but **networking** is a crucial part of your graduate school experience. This includes networking with your cohort! Your cohort will be some of your strongest connections after you graduate, and working on a capstone proposal with one or some of them is a great opportunity to build that connection. Beyond your cohort, working on a proposal with a client gives you several excellent opportunities to network, build your professional communication, and gain real-world experience in project development and management.
 
-2.  Build up resume
+-   The MEDS program is a professional-degree program and is all about preparing you for a career for solving environmental problems using data science. The capstone proposal is one of the first opportunities you can take to prepare you for a career as a data scientist! It's an opportunity to practice several professional skills like project management, communication, research, proposal writing and data exploration! This means this is **a real-life experience that you can put on your resume.** We found this to be crucial for us since our background has few data experiences and we want to be able to graduate with both a formal degree *and* experience.
 
-3.  Learn more about a topic you're interested in depth
-
-4.  
-
-5.  
+-   Our primary motivation for writing our capstone proposal was because we care about the topic. We deeply care about environmental justice, Learn more about a topic you're interested in depth
 
 #### 5 Most Helpful Resource
 
-1.  
+1.  Each other! After the first few weeks of summer, you and your cohort will have already spent up to 40 hrs a week with each other. Meaning - there's a good chance you'll have at least a basic understanding of everyone's interests (also you may not have an interest yet, or maybe your interests are vague ideas - that's okay!). When our capstone project idea was announced during the summer as a potential project, we gravitated toward each other 
 
 2.  
 
