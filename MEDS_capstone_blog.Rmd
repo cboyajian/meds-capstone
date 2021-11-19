@@ -37,63 +37,44 @@ Now that our proposal has been submitted, we're waiting to see if it will be sel
 
 #### Why you should write a proposal (even if you think you shouldn't or can't)
 
-We won't deny that writing a proposal can be a daunting task -- it takes time and work! -- but we are grateful to have gone through the process. Even if you're reading this and the proposal deadline is two weeks away, we encourage you to still consider writing a proposal! See if these reasons can convince you:
+We won't deny that writing a proposal can be a daunting task -- it takes time and work! -- but we are grateful to have gone through the process. Even if while you're reading this and the proposal deadline is two weeks away, we encourage you to still consider writing a proposal! See if these reasons can convince you:
 
--   You will hear this plenty at Bren (if you haven't already), but **networking** is a crucial part of your graduate school experience. This includes networking with your cohort! Your cohort will be some of your strongest connections after you graduate, and working on a capstone proposal with one or some of them is a great opportunity to build that connection. Beyond your cohort, working on a proposal with a client gives you several excellent opportunities to network, build your professional communication, and gain real-world experience in project development and management.
+-   You will hear this plenty at Bren (if you haven't already), but **networking** is a crucial part of your graduate school experience. This includes networking with your cohort! Your cohort will be some of your strongest connections after you graduate, and working on a capstone proposal with one or some of them is a great opportunity to build those connections. Beyond your cohort, working on a proposal with a client gives you several excellent opportunities to network, build your professional skills, and gain real-world experience in project development and management.
 
--   The MEDS program is a professional-degree program and is all about preparing you for a career for solving environmental problems using data science. The capstone proposal is one of the first opportunities you can take to prepare you for a career as a data scientist! It's an opportunity to practice several professional skills like project management, communication, research, proposal writing and data exploration! This means this is **a real-life experience that you can put on your resume.** We found this to be crucial for us since our background has few data experiences and we want to be able to graduate with both a formal degree *and* experience.
+-   The MEDS program is a professional-degree program and is all about preparing you for a career for solving environmental problems using data science. The capstone proposal is one of the first opportunities you can take to prepare you for a career as a data scientist! It's an opportunity to practice several professional skills like project management, communication, research, proposal writing and data exploration! This means this is **a real-life experience that you can put on your resume.** We found this to be crucial for us since our background has few data experiences and we want to be able to graduate with both a degree *and* experience.
 
--   Our primary motivation for writing our capstone proposal was because we care about the topic. We deeply care about environmental justice, Learn more about a topic you're interested in depth
+-   Our primary motivation to write a capstone proposal was because **we care about the topic**. We deeply care about environmental justice, and while we aren't 100% sure what this looks like for a data science career, we know we want careers that involve people and how they interact with the environment. So when we saw a proposal focused on studying spatiotemporal patterns of visitors in National Parks we both instantly wanted to know more. Writing a proposal gave us the **opportunity to dive into a topic we were interested in**, and to discuss it with each other and our clients.
 
-#### 5 Most Helpful Resource
+^ Add Pick on what you want to be challenged on / skills to learn here
 
-1.  Each other! After the first few weeks of summer, you and your cohort will have already spent up to 40 hrs a week with each other. Meaning - there's a good chance you'll have at least a basic understanding of everyone's interests (also you may not have an interest yet, or maybe your interests are vague ideas - that's okay!). When our capstone project idea was announced during the summer as a potential project, we gravitated toward each other 
+#### Most Helpful Resources
 
-2.  
+- Each other! After the first few weeks of summer, you and your cohort will have already spent at least 40 hrs a week with each other. Meaning - there's a good chance you'll have at least a basic understanding of everyone's interests (also you may not have an interest yet, or maybe your interests are vague ideas - that's okay!). When our capstone project idea was announced during the summer as a potential project, we gravitated toward each other and working together on a proposal demystified how daunting the whole task was. We could split up the work, we could lean on each other for support, and we could discuss when we were uncertain.
 
-3.  
+- We approached our client the second week of the summer and started brainstorming ideas soon after. By starting early, this gave us time to really sit with the information, the data, and the overall question we wanted to answer. Time to sit and reflect about your proposal is key.
 
-4.  
+- Another thing you've probably heard plenty already is **don't reinvent the wheel**. Many functions and solutions you need already exsit thanks to amazing and talented people. The same goes for project proposals. If you're getting writer's block look at previous years proposals for inspiration. 
 
-5.  
+- Use Zotero! Talk to a librarian! Did you know each department at UCSB has their own dedicated librarian? 
 
-#### 5 hardests parts of the process
+- If you haven't written in awhile...talk to professors or students in the [Communications Focus](https://bren.ucsb.edu/masters-programs/master-environmental-science-and-management/academics-mesm/communication-focus)! They know how important writing skills are and want you to succeed. Some helpful readings to check out are:  
 
-1.  
 
-2.  
+#### The "hardest" parts of the process
 
-3.  
+Writing a proposal is doable and we're *all* capable of writing one! Describing the work before we’ve learned how to do it
 
-4.  
 
-5.  
+#### Client Inspiration
 
-#### 5 Reflections
+Don't know where to start or what client you want to work with? Check out these organizations! These are clients 2022 MEDS wished we had the chance to work with. 
 
-1.  
+CalRecycle
 
-2.  
 
-3.  
+#### How to consider an Environmental Justice lens in your prosposal (and beyond!)
 
-4.  
-
-5.  
-
-#### 5 Places to get insp
-
-1.  
-
-2.  
-
-3.  
-
-4.  
-
-5.  
-
-#### 5 things to consider when writing about EJ
+Environmental Justice (EJ) 
 
 1.  **Power**
 
