@@ -15,8 +15,73 @@ library(lubridate)
 library(vistime)
 ```
 
-## Create timeline df
+```{r parameters}
+# html color codes
+dark_green <- "#196F3D"
+dark_yellow <- "#FCB322"
+dark_blue <- "#004266"
+dark_red <- "#990000"
+```
+
+
+
+## Create timeline df:
 ```{r}
+
+```
+
+
+## Gantt period option:
+```{r}
+# create df
+phase_timeline <- data.frame(
+  phase = c("Proposal", 
+           "Selection",
+           "Capstone Project"),
+  start_y = c(rep(c(2021), times = 2), 
+              rep(c(2022), times = 1)),
+  start_m = c(08, 11, 01),
+  start_d = c(01, 01, 01),
+  end_y = c(rep(c(2021), times = 2), 
+            rep(c(2022), times = 1)),
+  end_m = c(10, 12, 06),
+  end_d = c(31, 31, 30)
+  )
+
+# add color for phases
+phase_timeline <- phase_timeline %>% 
+  mutate(phase_color = case_when(phase == "Proposal" ~ dark_green,
+                                 phase == "Selection" ~ dark_blue,
+                                 phase == "Capstone Project" ~ dark_red))
+
+# create start date column
+phase_timeline$start_date <- with(phase_timeline, 
+                                  ymd(sprintf('%04d%02d%02d', 
+                                      phase_timeline$start_y, 
+                                      phase_timeline$start_m, 
+                                      phase_timeline$start_d)))
+
+# create end date column
+phase_timeline$end_date <- with(phase_timeline, 
+                                ymd(sprintf('%04d%02d%02d', 
+                                      phase_timeline$end_y, 
+                                      phase_timeline$end_m, 
+                                      phase_timeline$end_d)))
+
+# plot
+gg_vistime(data = phase_timeline,
+           col.event = "phase",
+           col.start = "start_date",
+           col.end = "end_date",
+           col.color = "phase_color",
+           optimize_y = TRUE)
+
+```
+
+
+## Point-line-segment events option:
+```{r}
+# create df
 cap_timeline <- data.frame(
   task = c("Capstone Kickoff Workshop", 
            "Writing A Proposal Workshop", 
@@ -28,18 +93,16 @@ cap_timeline <- data.frame(
            "Design Plan Presentations",
            "Technical Documentation & Repo",
            "Final Presentations"),
-  event_type = factor(c("Proposal (required)", 
+  event_type = c("Selection (required)",
                  "Proposal (optional)",
                  "Proposal (optional)",
-                 "Announcements", 
-                 "Proposal (required)", 
+                 "Announcements",
+                 "Selection (required)",
                  "Announcements", 
                  "Capstone Project",
                  "Capstone Project",
                  "Capstone Project",
                  "Capstone Project"),
-                 levels = c("Announcements", "Proposal (optional)", "Proposal (required)", "Capstone Project"),
-                 ordered = TRUE),
   start_y = c(rep(c(2021), times = 6), 
               rep(c(2022), times = 4)),
   start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05),
@@ -50,34 +113,31 @@ cap_timeline <- data.frame(
   end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27)
   )
 
+# add color for event type
+cap_timeline <- cap_timeline %>% 
+  mutate(event_type_color = case_when(event_type == "Proposal (optional)" ~ dark_green,
+                                      event_type == "Announcements" ~ dark_yellow,
+                                      event_type == "Selection (required)" ~ dark_blue,
+                                      event_type == "Capstone Project" ~ dark_red))
+
+# create start date column
 cap_timeline$start_date <- with(cap_timeline, 
                           ymd(sprintf('%04d%02d%02d', 
                                       cap_timeline$start_y, 
                                       cap_timeline$start_m, 
                                       cap_timeline$start_d)))
 
+# create end date column
 cap_timeline$end_date <- with(cap_timeline, 
                           ymd(sprintf('%04d%02d%02d', 
                                       cap_timeline$end_y, 
                                       cap_timeline$end_m, 
                                       cap_timeline$end_d)))
 
+# add 
 cap_timeline$order <- 1:nrow(cap_timeline)
 
 cap_timeline <- cap_timeline[with(cap_timeline, order(start_date)), ]
-```
-
-
-## Gantt period option:
-```{r}
-
-
-```
-
-
-## Point-line-segment events option:
-```{r}
-
 
 ```
 
