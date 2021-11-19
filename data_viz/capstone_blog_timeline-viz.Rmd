@@ -1,0 +1,42 @@
+---
+title: "Data viz options"
+author: "Clarissa Boyajian"
+date: "11/19/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(vistime)
+```
+
+## Gantt period option:
+```{r}
+
+
+```
+
+
+## Point-line-segment events option:
+```{r}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
