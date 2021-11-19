@@ -37,23 +37,21 @@ Now that our proposal has been submitted, we're waiting to see if it will be sel
 
 #### Why you should write a proposal (even if you think you shouldn't or can't)
 
-We won't deny that writing a proposal can be a daunting task -- it takes time and work! -- but we are grateful to have gone through the process. Even if while you're reading this and the proposal deadline is two weeks away, we encourage you to still consider writing a proposal! See if these reasons can convince you:
+We won't deny that writing a proposal can be a daunting task -- it takes time and work! -- but we think it's a worthwhile process. Even if the proposal deadline is two weeks away while you're reading this, we encourage you to write a proposal! See if these reasons can convince you:
 
--   You will hear this plenty at Bren (if you haven't already), but **networking** is a crucial part of your graduate school experience. This includes networking with your cohort! Your cohort will be some of your strongest connections after you graduate, and working on a capstone proposal with one or some of them is a great opportunity to build those connections. Beyond your cohort, working on a proposal with a client gives you several excellent opportunities to network, build your professional skills, and gain real-world experience in project development and management.
+-   You will hear this plenty at Bren (if you haven't already), but **networking** is a crucial part of your graduate school experience. This includes networking with your cohort! Your cohort will be some of your strongest connections after you graduate, and working on a capstone proposal with one or some of them is a great opportunity to build those connections. Beyond your cohort, working on a proposal with a client gives you several excellent opportunities to network with potential employers.
 
--   The MEDS program is a professional-degree program and is all about preparing you for a career for solving environmental problems using data science. The capstone proposal is one of the first opportunities you can take to prepare you for a career as a data scientist! It's an opportunity to practice several professional skills like project management, communication, research, proposal writing and data exploration! This means this is **a real-life experience that you can put on your resume.** We found this to be crucial for us since our background has few data experiences and we want to be able to graduate with both a degree *and* experience.
+-   The MEDS program is a professional-degree program and is all about preparing you for a career to solve environmental problems using data science. The capstone proposal is one of the first opportunities that prepares you for a career as a data scientist! It's a moment to practice several professional skills like project management, communication, research, proposal writing and data exploration! This means this is **a real-life experience that you can put on your resume.** We found this to be crucial for us since our background has few data experiences and we want to be able to graduate with both a degree *and* relevant experience.
 
--   Our primary motivation to write a capstone proposal was because **we care about the topic**. We deeply care about environmental justice, and while we aren't 100% sure what this looks like for a data science career, we know we want careers that involve people and how they interact with the environment. So when we saw a proposal focused on studying spatiotemporal patterns of visitors in National Parks we both instantly wanted to know more. Writing a proposal gave us the **opportunity to dive into a topic we were interested in**, and to discuss it with each other and our clients.
-
-^ Add Pick on what you want to be challenged on / skills to learn here
+-   Our primary motivation to write a capstone proposal was because **we care about the topic**. We deeply care about environmental justice, and while we aren't 100% sure what this looks like for a data science career, we know we want careers that involve people and how they interact with the environment. So when we saw a proposal focused on studying spatiotemporal patterns of visitors in National Parks we both instantly wanted to know more. Writing a proposal gave us the **opportunity to dive into a topic we were interested in**. This made writing the proposal less of a daunting task since we were internally motivated. It also meant that we were more willing to challenge ourselves because we personally care about the outcome of the proposal.
 
 #### Most Helpful Resources
 
-- Each other! After the first few weeks of summer, you and your cohort will have already spent at least 40 hrs a week with each other. Meaning - there's a good chance you'll have at least a basic understanding of everyone's interests (also you may not have an interest yet, or maybe your interests are vague ideas - that's okay!). When our capstone project idea was announced during the summer as a potential project, we gravitated toward each other and working together on a proposal demystified how daunting the whole task was. We could split up the work, we could lean on each other for support, and we could discuss when we were uncertain.
+- Each other! After the first few weeks of summer, you and your cohort will have already spent at least 40 hrs a week with each other. Meaning - there's a good chance you'll have at least a basic understanding of everyone's interests (also you may not have an interest yet, or maybe your interests are only vague ideas - that's okay!). Anyway, what we are trying to say is find who in your cohort has similar interests to you! Because writing a proposal together demystifies how daunting the whole task is. This allows you to split up the work, lean on each other for support, and discuss when you feel uncertain.
 
-- We approached our client the second week of the summer and started brainstorming ideas soon after. By starting early, this gave us time to really sit with the information, the data, and the overall question we wanted to answer. Time to sit and reflect about your proposal is key.
+- We approached our client the second week of the summer and started brainstorming ideas soon after. By starting early, this gave us time to really sit with the information, the data, and the overall question we wanted to answer. When it comes to writing a proposal, **time to sit and reflect about your proposal idea is part of the process!**
 
-- Another thing you've probably heard plenty already is **don't reinvent the wheel**. Many functions and solutions you need already exsit thanks to amazing and talented people. The same goes for project proposals. If you're getting writer's block look at previous years proposals for inspiration. 
+- Something else you've probably heard is **don't reinvent the wheel**. Many functions and solutions you need already exist thanks to the many amazing and talented individuals within the data science field. The same goes for project proposals. If you're getting writer's block look at the [Master's Project Directory on the Bren website](https://bren.ucsb.edu/projects) to see previous years proposals for inspiration (Bren students have been doing capstone projects since 1999!). 
 
 - Use Zotero! Talk to a librarian! Did you know each department at UCSB has their own dedicated librarian? 
 
@@ -65,12 +63,9 @@ We won't deny that writing a proposal can be a daunting task -- it takes time an
 Writing a proposal is doable and we're *all* capable of writing one! Describing the work before we’ve learned how to do it
 
 
-#### Client Inspiration
+#### Client Inspiration (WORKING ON DATA VIZ FOR THIS WILL ADD LATER)
 
-Don't know where to start or what client you want to work with? Check out these organizations! These are clients 2022 MEDS wished we had the chance to work with. 
-
-CalRecycle
-
+Don't know where to start or what client you want to work with? Check out these organizations! Here are all the clients and faculty advisors Bren students have worked with.
 
 #### How to consider an Environmental Justice lens in your prosposal (and beyond!)
 
