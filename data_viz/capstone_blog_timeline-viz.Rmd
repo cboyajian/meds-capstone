@@ -15,6 +15,59 @@ library(lubridate)
 library(vistime)
 ```
 
+## Create timeline df
+```{r}
+cap_timeline <- data.frame(
+  task = c("Capstone Kickoff Workshop", 
+           "Writing A Proposal Workshop", 
+           "Write Proposals", 
+           "Projects Revealed to MEDS", 
+           "Student Voting", 
+           "Final Capstone Assignments",
+           "Design & Implementation Plan",
+           "Design Plan Presentations",
+           "Technical Documentation & Repo",
+           "Final Presentations"),
+  event_type = factor(c("Proposal (required)", 
+                 "Proposal (optional)",
+                 "Proposal (optional)",
+                 "Announcements", 
+                 "Proposal (required)", 
+                 "Announcements", 
+                 "Capstone Project",
+                 "Capstone Project",
+                 "Capstone Project",
+                 "Capstone Project"),
+                 levels = c("Announcements", "Proposal (optional)", "Proposal (required)", "Capstone Project"),
+                 ordered = TRUE),
+  start_y = c(rep(c(2021), times = 6), 
+              rep(c(2022), times = 4)),
+  start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05),
+  start_d = c(09, 26, 27, 17, 19, 01, 02, 03, 04, 26),
+  end_y = c(rep(c(2021), times = 6), 
+            rep(c(2022), times = 4)),
+  end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05),
+  end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27)
+  )
+
+cap_timeline$start_date <- with(cap_timeline, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      cap_timeline$start_y, 
+                                      cap_timeline$start_m, 
+                                      cap_timeline$start_d)))
+
+cap_timeline$end_date <- with(cap_timeline, 
+                          ymd(sprintf('%04d%02d%02d', 
+                                      cap_timeline$end_y, 
+                                      cap_timeline$end_m, 
+                                      cap_timeline$end_d)))
+
+cap_timeline$order <- 1:nrow(cap_timeline)
+
+cap_timeline <- cap_timeline[with(cap_timeline, order(start_date)), ]
+```
+
+
 ## Gantt period option:
 ```{r}
 
