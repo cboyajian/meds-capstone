@@ -12,22 +12,23 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(lubridate)
+library(vistime)
 ```
 
 
 ```{r Create df}
 cap_timeline <- data.frame(
-  task = c("Capstone Kickoff\nWorkshop", 
-           "Writing A Proposal\nWorkshop", 
+  task = c("Capstone Kickoff Workshop", 
+           "Writing A Proposal Workshop", 
            "Write Proposals", 
-           "Projects Revealed\nto MEDS", 
+           "Projects Revealed to MEDS", 
            "Student Voting", 
-           "Final Capstone\nAssignments",
-           "Design &\nImplementation Plan",
-           "Design Plan\nPresentations",
-           "Technical Documentation\n& Repo",
+           "Final Capstone Assignments",
+           "Design & Implementation Plan",
+           "Design Plan Presentations",
+           "Technical Documentation & Repo",
            "Final Presentations"),
-  event_type = c("Proposal (required)", 
+  event_type = factor(c("Proposal (required)", 
                  "Proposal (optional)",
                  "Proposal (optional)",
                  "Announcements", 
@@ -37,10 +38,12 @@ cap_timeline <- data.frame(
                  "Capstone Project",
                  "Capstone Project",
                  "Capstone Project"),
+                 levels = c("Announcements", "Proposal (optional)", "Proposal (required)", "Capstone Project"),
+                 ordered = TRUE),
   start_y = c(rep(c(2021), times = 6), 
               rep(c(2022), times = 4)),
   start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05),
-  start_d = c(09, 26, 26, 17, 16, 01, 02, 03, 11, 26),
+  start_d = c(09, 26, 27, 17, 19, 01, 02, 03, 04, 26),
   end_y = c(rep(c(2021), times = 6), 
             rep(c(2022), times = 4)),
   end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05),
@@ -66,39 +69,87 @@ cap_timeline <- cap_timeline[with(cap_timeline, order(start_date)), ]
 
 
 
-```{r Create gantt, fig.width=10}
-time_line <- cap_timeline %>% 
+```{r Attempt 1: geom_segment, fig.width=9}
+timeline_viz <- cap_timeline %>% 
  ggplot(aes(x = start_date, 
             y = order, 
             color = event_type)) +
  geom_segment(aes(xend = end_date, 
                   yend = order, 
                   color =  event_type), 
-              size = 10) +
+              size = 10,
+              show.legend = TRUE) +
  geom_text(aes(label = task), 
            size = 4, 
            show.legend = FALSE, 
-           nudge_x = -45
+           nudge_x = -55
            ) +
  scale_color_manual(values = c("Proposal (optional)" = "#004266", 
                                "Announcements" = "#FCB322", 
-                               "Proposal (required)" = "#D62828",
+                               "Proposal (required)" = "#D22B2B",
                                "Capstone Project" = "darkred")) + 
   expand_limits(x = as.Date(c("2021-04-01", "2022-06-30"))) +
-  theme(legend.position = "right",
-        legend.title = element_blank(),
+  theme(legend.title = element_blank(),
         legend.direction = "vertical",
         axis.title.y = element_blank(),
         axis.text.y = element_blank(),
         axis.title.x = element_blank(),
         axis.text.x = element_text(),
-        text = element_text(size = 15))+
+        text = element_text(size = 15),
+        panel.background = element_rect("white"),
+        panel.border = element_rect(fill = NA),
+        panel.grid = element_line(NA)) +
   scale_x_continuous(breaks = as.Date(c("2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01", 
                                         "2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01")),
-                     labels = c("Aug 2021", "Sept", "Oct", "Nov", "Dec", "Jan 2022", "Feb", "March", "April", "May"),
-                     n.breaks = 10) +
+                     labels = c("Aug 2021", "Sept", "Oct", "Nov", "Dec", "Jan 2022", "Feb", "March", "April", "May")) +
   labs(title = "MEDS Capstone Timeline")
 
-time_line
+timeline_viz
+```
+
+
+```{r Attempt 2: vistime}
+test_df <- cap_timeline %>% 
+  select("task", "event_type", "start_date", "end_date") %>% 
+  mutate(event_type_color = case_when(event_type == "Proposal (optional)" ~ "#004266",
+                                      event_type == "Announcements" ~ "goldenrod",
+                                      event_type == "Proposal (required)" ~ "#990000",
+                                      event_type == "Capstone Project" ~ "darkred"))
+
+fct_relevel(test_df$event_type, "Capstone Project", after = 3)
+
+test_plot <- vistime(test_df,
+                col.event = "task",
+                col.start = "start_date",
+                col.end = "end_date",
+                col.color = "event_type_color",
+                optimize_y = TRUE,
+                linewidth = 50,
+                title = "MEDS Capstone Proposal Timeline")
+
+test_plot
+```
+
+
+```{r Attempt 3: gg_vistime, eval=FALSE}
+test_df_2 <- cap_timeline %>% 
+  select("task", "event_type", "start_date", "end_date") %>% 
+  mutate(event_type_color = c("#D62828", "#004266", "#004266", "#D62828", "#FCB322", "#FCB322", "darkred", "darkred", "darkred", "darkred"))
+
+test_plot2 <- gg_vistime(data = test_df_2,
+                         col.event = "task",
+                         col.start = "start_date",
+                         col.end = "end_date",
+                         col.color = "event_type_color",
+                         optimize_y = TRUE)
+
+test_plot2_df <- ggplot_build(test_plot2)
+
+test_plot2_df$data[[4]]$hjust <- 90
+
+test_plot2_rebuilt <- ggplot_gtable(test_plot2_df)
+
+test_plot2
+plot(test_plot2_rebuilt)
 ```
 
