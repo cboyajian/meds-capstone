@@ -72,8 +72,6 @@ phase_plot <- gg_vistime(data = phase_timeline,
   theme_classic()
 
 phase_plot
-
-## 1 IDEA: we could add each item that occurs within each phase as a list that shows up when you hover over that phase (unsure how to do this)
 ```
 
 
@@ -90,7 +88,9 @@ cap_timeline <- data.frame(
            "Design &\nImplementation Plan",
            "Design Plan\nPresentations",
            "Technical\nDocumentation & Repo",
-           "Final\nPresentations"),
+           "Final\nPresentations",
+           "MEDS Program\nBegins",
+           "MEDS Graduation"),
   event_type = c("Proposal (required)",
                  "Proposal (optional)",
                  "Proposal (optional)",
@@ -100,15 +100,19 @@ cap_timeline <- data.frame(
                  "Capstone Project",
                  "Capstone Project",
                  "Capstone Project",
-                 "Capstone Project"),
+                 "Capstone Project",
+                 "Announcements",
+                 "Announcements"),
   start_y = c(rep(c(2021), times = 6), 
-              rep(c(2022), times = 4)),
-  start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05),
-  start_d = c(09, 26, 27, 17, 19, 01, 02, 03, 04, 26),
+              rep(c(2022), times = 4),
+              2021, 2022),
+  start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05, 07, 06),
+  start_d = c(09, 26, 27, 17, 19, 01, 02, 03, 04, 26, 29, 12),
   end_y = c(rep(c(2021), times = 6), 
-            rep(c(2022), times = 4)),
-  end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05),
-  end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27)
+            rep(c(2022), times = 4),
+            2021, 2022),
+  end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05, 07, 06),
+  end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27, 28, 13)
   )
 
 # re-level event type factor and add color
@@ -165,11 +169,11 @@ year_df <- data.frame(year_date_range, year_format)
 
 ```{r}
 # line and point locations
-positions <- c(0.65, -0.25, 0.4, 0.25, -0.25, 
-               0.65, -0.35, 0.4, -0.25, 0.65)
+positions <- c(0.25, 0.65, -0.25, 0.4, 0.25, -0.25, 
+               0.65, -0.35, 0.4, -0.25, 0.65, 0.25)
 
-directions <- c(1, -1, 1, 1, -1, 
-                1, -1, 1, -1, 1)
+directions <- c(1, 1, -1, 1, 1, -1, 
+                1, -1, 1, -1, 1, 1)
 
 line_pos <- data.frame(
   "middle_date" = unique(cap_timeline$middle_date),
