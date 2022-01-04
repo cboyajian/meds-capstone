@@ -18,16 +18,9 @@ library(vistime)
 ```{r parameters}
 # html color codes
 dark_green <- "#196F3D"
-dark_yellow <- "#FCB322"
+dark_yellow <- "#EBA61E"
 dark_blue <- "#004266"
 dark_red <- "#990000"
-```
-
-
-
-## Create timeline df:
-```{r}
-
 ```
 
 
@@ -69,53 +62,61 @@ phase_timeline$end_date <- with(phase_timeline,
                                       phase_timeline$end_d)))
 
 # plot viz
-vistime(data = phase_timeline,
+phase_plot <- gg_vistime(data = phase_timeline,
            col.event = "phase",
            col.start = "start_date",
            col.end = "end_date",
            col.color = "phase_color",
-           optimize_y = TRUE)
+           optimize_y = TRUE,
+           title = "Timeline of Capstone Phases") +
+  theme_classic()
 
-## 1 IDEA: we could add each item that occurs within each phase as a list that shows up when you hover over that phase (unsure how to do this)
+phase_plot
 ```
 
 
 ## Point-line-segment events option:
-```{r}
+```{r Create df}
 # create df
 cap_timeline <- data.frame(
-  task = c("Capstone Kickoff Workshop", 
-           "Writing A Proposal Workshop", 
-           "Write Proposals", 
-           "Projects Revealed to MEDS", 
-           "Student Voting", 
-           "Final Capstone Assignments",
-           "Design & Implementation Plan",
-           "Design Plan Presentations",
-           "Technical Documentation & Repo",
-           "Final Presentations"),
-  event_type = c("Proposal Selection",
+  task = c("Capstone Kickoff\nWorkshop", 
+           "Writing A Proposal\nWorkshop", 
+           "Write\nProposal", 
+           "Projects Revealed\nto MEDS", 
+           "Student\nVoting", 
+           "Final Capstone\nAssignments",
+           "Design &\nImplementation Plan",
+           "Design Plan\nPresentations",
+           "Technical\nDocumentation & Repo",
+           "Final\nPresentations",
+           "MEDS Program\nBegins",
+           "MEDS Graduation"),
+  event_type = c("Proposal (required)",
                  "Proposal (optional)",
                  "Proposal (optional)",
                  "Announcements",
-                 "Proposal Selection",
+                 "Proposal (required)",
                  "Announcements", 
                  "Capstone Project",
                  "Capstone Project",
                  "Capstone Project",
-                 "Capstone Project"),
+                 "Capstone Project",
+                 "Announcements",
+                 "Announcements"),
   start_y = c(rep(c(2021), times = 6), 
-              rep(c(2022), times = 4)),
-  start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05),
-  start_d = c(09, 26, 27, 17, 19, 01, 02, 03, 04, 26),
+              rep(c(2022), times = 4),
+              2021, 2022),
+  start_m = c(08, 08, 08, 11, 11, 12, 01, 03, 03, 05, 07, 06),
+  start_d = c(09, 26, 27, 17, 19, 01, 02, 03, 04, 26, 29, 12),
   end_y = c(rep(c(2021), times = 6), 
-            rep(c(2022), times = 4)),
-  end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05),
-  end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27)
+            rep(c(2022), times = 4),
+            2021, 2022),
+  end_m = c(08, 08, 10, 11, 11, 12, 02, 03, 04, 05, 07, 06),
+  end_d = c(10, 27, 15, 18, 24, 02, 11, 04, 29, 27, 28, 13)
   )
 
 # re-level event type factor and add color
-event_type_levels <- c("Announcements", "Proposal (optional)", "Proposal Selection", "Capstone Project")
+event_type_levels <- c("Announcements", "Proposal (optional)", "Proposal (required)", "Capstone Project")
 cap_timeline$event_type <- factor(cap_timeline$event_type, 
                                   levels = event_type_levels, 
                                   ordered = TRUE)
@@ -135,6 +136,10 @@ cap_timeline$end_date <- with(cap_timeline,
                                       cap_timeline$end_m, 
                                       cap_timeline$end_d)))
 
+# create average date
+cap_timeline <- cap_timeline %>% 
+  mutate(middle_date = start_date + ((end_date - start_date) * 0.5))
+
 # add numerical order row
 cap_timeline$order <- 1:nrow(cap_timeline)
 
@@ -146,42 +151,41 @@ cap_timeline <- cap_timeline[with(cap_timeline, order(start_date)), ]
 ```{r}
 month_buffer <- 2
 
-month_date_range <- seq(min(cap_timeline$start_date) - months(month_buffer), 
-                        max(cap_timeline$start_date) + months(month_buffer), 
+# creating df for month ticks/labels
+month_date_range <- seq(min(cap_timeline$middle_date) - months(month_buffer), 
+                        max(cap_timeline$middle_date) + months(month_buffer), 
                         by = "month")
-
 month_format <- format(month_date_range, "%b")
-
 month_df <- data.frame(month_date_range, month_format)
 
-year_date_range <- seq(min(cap_timeline$start_date) - months(month_buffer), 
-                       max(cap_timeline$start_date) + months(month_buffer), 
+# creating df for year labels
+year_date_range <- seq(min(cap_timeline$middle_date) - months(month_buffer), 
+                       max(cap_timeline$middle_date) + months(month_buffer), 
                        by = "year")
-
 year_format <- format(year_date_range, "%Y")
-
 year_df <- data.frame(year_date_range, year_format)
 
 ```
 
 ```{r}
-positions <- c(-0.5, -1.0, 0.25, 0.4, -0.25, 
-               0.75, 1.0, 0.5, -1.0, -0.5)
+# line and point locations
+positions <- c(0.25, 0.65, -0.25, 0.4, 0.25, -0.25, 
+               0.65, -0.35, 0.4, -0.25, 0.65, 0.25)
 
-directions <- c(-1, -1, 1, 1, -1, 
-                1, 1, 1, -1, -1)
+directions <- c(1, 1, -1, 1, 1, -1, 
+                1, -1, 1, -1, 1, 1)
 
 line_pos <- data.frame(
-  "start_date" = unique(cap_timeline$start_date),
-  "position" = rep(positions, length.out = length(unique(cap_timeline$start_date))),
-  "direction" = rep(directions, length.out = length(unique(cap_timeline$start_date)))
+  "middle_date" = unique(cap_timeline$middle_date),
+  "position" = rep(positions, length.out = length(unique(cap_timeline$middle_date))),
+  "direction" = rep(directions, length.out = length(unique(cap_timeline$middle_date)))
 )
 
-cap_timeline <- left_join(x = cap_timeline, y = line_pos, by = "start_date")
+cap_timeline <- left_join(x = cap_timeline, y = line_pos, by = "middle_date")
 ```
 
 ```{r}
-text_offset <- 0.15
+text_offset <- 0.125
 
 absolute_value <- (abs(cap_timeline$position))
 
@@ -190,9 +194,12 @@ text_position <- absolute_value + text_offset
 cap_timeline$text_position <- text_position * cap_timeline$direction
 ```
 
-```{r}
+```{r Create timeline plot}
 timeline_plot <- ggplot(data = cap_timeline, 
-                        aes(x = start_date, y = position, col = event_type, label = task)) +
+                        aes(x = middle_date, 
+                            y = position, 
+                            col = event_type, 
+                            label = task)) +
   labs(col = "Tasks") +
   scale_color_manual(values = event_type_color, 
                      labels = event_type_levels, 
@@ -203,7 +210,7 @@ timeline_plot <- ggplot(data = cap_timeline,
              size = 0.3) +
   geom_segment(aes(y = position,
                    yend = 0,
-                   xend = start_date), 
+                   xend = middle_date), 
                color = "black", 
                size = 0.2) +
   geom_point(aes(y = position), 
@@ -235,11 +242,17 @@ timeline_plot <- ggplot(data = cap_timeline,
   geom_text(aes(y = text_position, 
                 label = task), 
             size = 3.5, 
-            vjust = 0.6)
+            vjust = 0.6) +
+  ggtitle("Timeline of Capstone Milestones")
 
 timeline_plot
 ```
 
+```{r}
+ggsave(plot = phase_plot, filename = "phase_plot.png", height = 10, width = 12) ## need to figure out how to remove the extre space above and below on y-axis
+
+ggsave(plot = timeline_plot, filename = "timeline_plot.png", height = 10, width = 12)
+```
 
 
 
